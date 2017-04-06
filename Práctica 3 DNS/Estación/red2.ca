@@ -1,0 +1,18 @@
+$ORIGIN red2.redes.dis.ulpgc.es.
+@ IN SOA ZabaiEstacion root(
+	2
+	3600
+	3600
+	3600
+	3600
+)
+;
+ IN NS ZabaiEstacion
+ IN NS ZabaiPasarela
+;
+ZabaiPasarela IN A 10.110.2.1
+ZabaiEstacion IN A 10.110.2.2
+;
+ZabaiE IN CNAME ZabaiEstacion
+ZabaiPP IN CNAME ZabaiPasarela
+;

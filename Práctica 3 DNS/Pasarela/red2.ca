@@ -1,0 +1,16 @@
+$ORIGIN .
+$TTL 3600	; 1 hour
+red2.redes.dis.ulpgc.es	IN SOA	ZabaiEstacion.red2.redes.dis.ulpgc.es. root.red2.redes.dis.ulpgc.es. (
+				2          ; serial
+				3600       ; refresh (1 hour)
+				3600       ; retry (1 hour)
+				3600       ; expire (1 hour)
+				3600       ; minimum (1 hour)
+				)
+			NS	ZabaiEstacion.red2.redes.dis.ulpgc.es.
+			NS	ZabaiPasarela.red2.redes.dis.ulpgc.es.
+$ORIGIN red2.redes.dis.ulpgc.es.
+ZabaiE			CNAME	ZabaiEstacion
+ZabaiEstacion		A	10.110.2.2
+ZabaiPasarela		A	10.110.2.1
+ZabaiPP			CNAME	ZabaiPasarela

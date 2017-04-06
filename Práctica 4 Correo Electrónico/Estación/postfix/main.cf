@@ -1,0 +1,23 @@
+myhostname=smtp.red2.redes.dis.ulpgc.es
+mydomain=red2.redes.dis.ulpgc.es
+
+mydestination=$myhostname, $mydomain, localhost.$domain, localhost
+myorigin=$mydomain
+
+mynetworks=127.0.0.0/8 10.110.2.0/24
+
+inet_interface=all
+inet_protocols=ipv4
+relayhost=neptuno.redes.dis.ulpgc.es
+
+always_add_missing_headers=yes
+
+sender_canonical_maps = hash:/etc/postfix/canonical_sender
+recipient_canonical_maps = hash:/etc/postfix/canonical_recipient
+
+relocated_maps = hash:/etc/postfix/relocated_map
+
+smtpd_client_restrictions =
+smtpd_helo_restrictions =
+smtpd_sender_restrictions = check_sender_access hash:/etc/postfix/control_remitente
+smtpd_recipient_restrictions = permit_mynetworks, check_client_access hash:/etc/postfix/maquinas, reject_unauth_destination
