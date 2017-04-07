@@ -1,0 +1,14 @@
+$ORIGIN 2.110.10.in-addr.arpa.
+@ IN SOA ZabaiEstacion.red2.redes.dis.ulpgc.es. root.red2.redes.dis.ulpgc.es.(
+	0
+	3600
+	3600
+	3600
+	3600
+)
+;
+ IN NS ZabaiEstacion.red2.redes.dis.ulpgc.es.
+;
+1 IN PTR ZabaiPasarela.red2.redes.dis.ulpgc.es.
+2 IN PTR ZabaiEstacion.red2.redes.dis.ulpgc.es.
+;

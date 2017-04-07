@@ -1,0 +1,21 @@
+$ORIGIN red2.redes.dis.ulpgc.es.
+$TTL 180
+@ IN SOA ZabaiEstacion root(
+	5
+	3600
+	3600
+	3600
+	3600
+)
+;
+ IN NS ZabaiEstacion
+ IN NS ZabaiPasarela
+;
+ZabaiPasarela IN A 10.110.2.1
+ZabaiEstacion IN A 10.110.2.2
+;
+@  IN MX 10  ZabaiEstacion
+;
+imap IN CNAME ZabaiEstacion
+ZabaiPP IN CNAME ZabaiPasarela
+;
