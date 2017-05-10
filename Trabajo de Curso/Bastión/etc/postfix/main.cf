@@ -1,0 +1,15 @@
+myhostname=smtp.red10.redes.dis.ulpgc.es
+mydomain=red10.redes.dis.ulpgc.es
+
+mydestination=$myhostname, $mydomain, localhost.$domain, localhost
+myorigin=$mydomain
+
+mynetworks=127.0.0.0/8 10.110.10.0/24
+
+inet_interface=all
+inet_protocols=ipv4
+relayhost=neptuno.redes.dis.ulpgc.es
+
+always_add_missing_headers=yes
+
+smtpd_recipient_restrictions = permit_mynetworks, check_client_access hash:/etc/postfix/maquinas, reject_unauth_destination
