@@ -20,8 +20,8 @@ iptables -A INPUT -p tcp -m multiport --sports 53,80,443,8443 -j ACCEPT # DNS, H
 #iptables -A FORWARD -i eth0 -o eth1 -p icmp --icmp-type echo-reply -j ACCEPT
 iptables -A FORWARD -p udp --sport 53 -j ACCEPT	# DNS
 iptables -A FORWARD -p udp --dport 53 -j ACCEPT	# DNS
-iptables -A FORWARD -p tcp -m multiport --sports 53,80,443,8443,25,143 -j ACCEPT # DNS, HTTP, HTTPS, Campus, SMTP, IMAP
-iptables -A FORWARD -p tcp -m multiport --dports 53,80,443,8443,25,143 -j ACCEPT # DNS, HTTP, HTTPS, Campus, SMTP, IMAP
+iptables -A FORWARD -p tcp -m multiport --sports 53,80,443,8443,25,143,8080 -j ACCEPT # DNS, HTTP, HTTPS, Campus, SMTP, IMAP, SQUID
+iptables -A FORWARD -p tcp -m multiport --dports 53,80,443,8443,25,143,8080 -j ACCEPT # DNS, HTTP, HTTPS, Campus, SMTP, IMAP, SQUID
 
 # OUTPUT
 iptables -A OUTPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
